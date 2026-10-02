@@ -35,7 +35,7 @@ export function BoardView() {
 
   return (
     <section className="screen board-screen">
-      <img className="screen-bg" src="/assets/illustrations/board/bosque.svg" alt="" />
+      <img className="screen-bg" src="/assets/illustrations/board/bosque.webp" alt="" onError={(event) => { event.currentTarget.src = "/assets/illustrations/board/bosque.png"; }} />
       <header className="topbar">
         <div className="logo-plate"><BrandLogo /></div>
         <button type="button" className="btn btn-ghost light" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
@@ -45,9 +45,9 @@ export function BoardView() {
         <div className="center-stage">
         <div className="circle-frame">
           {game.activeCard ? (
-            <Illustration src={game.activeCard.image} alt={game.activeCard.alt} />
+            <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
           ) : (
-            <Illustration src="/assets/illustrations/guide/milo-espera.svg" alt="Milo espera en el bosque, listo para el siguiente turno" />
+            <Illustration src="/assets/illustrations/guide/milo-espera.webp" fallback="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, listo para el siguiente turno" />
           )}
         </div>
         <div className="text-card">

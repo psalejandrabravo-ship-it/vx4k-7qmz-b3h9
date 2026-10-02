@@ -6,7 +6,7 @@ export function StartView() {
   const { setView } = useGame();
   return (
     <section className="screen start-screen">
-      <img className="screen-bg" src="/assets/illustrations/cover/inicio.svg" alt="Bosque encantado con Milo al inicio del sendero" />
+      <img className="screen-bg" src="/assets/illustrations/cover/inicio.webp" alt="Bosque encantado con Milo al inicio del sendero" onError={(event) => { event.currentTarget.src = "/assets/illustrations/cover/inicio.png"; }} />
       <header className="topbar">
         <div className="logo-plate"><BrandLogo /></div>
         <FullscreenButton />

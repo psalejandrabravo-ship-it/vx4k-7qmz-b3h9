@@ -8,7 +8,7 @@ export function GoalView() {
   const [video, setVideo] = useState(false);
   return (
     <section className="screen goal-screen">
-      <img className="screen-bg" src="/assets/illustrations/closing/meta.svg" alt="Claro del bosque con Milo celebrando el sendero recorrido" />
+      <img className="screen-bg" src="/assets/illustrations/closing/meta.webp" alt="Claro del bosque con Milo celebrando el sendero recorrido" onError={(event) => { event.currentTarget.src = "/assets/illustrations/closing/meta.png"; }} />
       <div className="goal-copy">
         <h1>¡Lo logramos!</h1>
         <p>Miramos, comprendimos y ahora cuidamos. Juntos construimos un sendero de amistad. 💛</p>
