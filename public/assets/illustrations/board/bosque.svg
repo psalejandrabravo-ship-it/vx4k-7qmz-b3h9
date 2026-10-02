@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img">
+  <title>Bosque encantado, fondo del tablero</title>
+  <rect width="1920" height="1080" fill="#1E2C38"/>
+  <rect x="1280" y="0" width="640" height="1080" fill="#1A2832" opacity="0.45"/>
+  <ellipse cx="220" cy="980" rx="420" ry="220" fill="#2C4A3C"/>
+  <ellipse cx="980" cy="160" rx="520" ry="180" fill="#243E34"/>
+  <ellipse cx="1680" cy="420" rx="300" ry="240" fill="#24362E" opacity="0.7"/>
+  <ellipse cx="160" cy="640" rx="70" ry="180" fill="#17352C"/>
+  <ellipse cx="300" cy="520" rx="54" ry="150" fill="#1E4638"/>
+  <ellipse cx="1720" cy="240" rx="60" ry="140" fill="#173028"/>
+  <circle cx="250" cy="140" r="36" fill="#E6B84C" opacity="0.28"/>
+  <ellipse cx="180" cy="900" rx="80" ry="22" fill="#6E8B6A" opacity="0.5"/>
+  <ellipse cx="1680" cy="760" rx="70" ry="18" fill="#6E8B6A" opacity="0.35"/>
+</svg>
