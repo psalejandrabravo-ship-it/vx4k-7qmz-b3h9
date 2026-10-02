@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { categoryMeta } from "../../data/cards";
 import { landmarks, startPosition, stepPosition } from "../../lib/game/path";
 import type { StepMark } from "../../types/game";
 
 export function Path({ total, steps }: { total: number; steps: StepMark[] }) {
+  const [miloFailed, setMiloFailed] = useState(false);
   const current = steps.length;
   const milo = current === 0 ? startPosition : stepPosition(current);
   const goal = stepPosition(total);
@@ -28,12 +30,15 @@ export function Path({ total, steps }: { total: number; steps: StepMark[] }) {
         );
       })}
       <span className="goal-mark" style={{ left: `${goal.x}%`, top: `${goal.y}%` }}>Meta</span>
-      <img
-        className="milo-token"
-        src="/assets/illustrations/guide/milo-camina.png"
-        alt=""
-        style={{ left: `${milo.x}%`, top: `${milo.y}%` }}
-      />
+      {miloFailed ? null : (
+        <img
+          className="milo-token"
+          src="/assets/illustrations/guide/milo-camina.png"
+          alt=""
+          style={{ left: `${milo.x}%`, top: `${milo.y}%` }}
+          onError={() => setMiloFailed(true)}
+        />
+      )}
     </div>
   );
 }

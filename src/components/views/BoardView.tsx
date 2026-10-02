@@ -15,6 +15,7 @@ export function BoardView() {
   const [help, setHelp] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [confirmPrefs, setConfirmPrefs] = useState(false);
+  const [forestFailed, setForestFailed] = useState(false);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -41,7 +42,11 @@ export function BoardView() {
       </header>
       <div className="board-body">
         <div className="board-frame">
-          <img className="board-bg" src="/assets/illustrations/board/bosque.jpg" alt="Claro del bosque con el sendero en herradura" />
+          {forestFailed ? (
+            <p className="image-fallback" role="status">No pudimos cargar el bosque. El sendero sigue disponible.</p>
+          ) : (
+            <img className="board-bg" src="/assets/illustrations/board/bosque.jpg" alt="Claro del bosque con el sendero en herradura" onError={() => setForestFailed(true)} />
+          )}
           <Path total={game.participantCount} steps={game.steps} />
           <div className="center-stage">
             <div className="circle-frame">
