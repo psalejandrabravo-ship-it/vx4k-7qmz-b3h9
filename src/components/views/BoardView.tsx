@@ -35,28 +35,30 @@ export function BoardView() {
 
   return (
     <section className="screen board-screen">
-      <img className="screen-bg" src="/assets/illustrations/board/bosque.webp" alt="" onError={(event) => { event.currentTarget.src = "/assets/illustrations/board/bosque.png"; }} />
       <header className="topbar">
         <div className="logo-plate"><BrandLogo /></div>
         <button type="button" className="btn btn-ghost light" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
       </header>
       <div className="board-body">
-        <Path total={game.participantCount} steps={game.steps} />
-        <div className="center-stage">
-        <div className="circle-frame">
-          {game.activeCard ? (
-            <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
-          ) : (
-            <Illustration src="/assets/illustrations/guide/milo-espera.webp" fallback="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, listo para el siguiente turno" />
-          )}
+        <div className="board-frame">
+          <img className="board-bg" src="/assets/illustrations/board/bosque.jpg" alt="Claro del bosque con el sendero en herradura" />
+          <Path total={game.participantCount} steps={game.steps} />
+          <div className="center-stage">
+            <div className="circle-frame">
+              {game.activeCard ? (
+                <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
+              ) : (
+                <Illustration src="/assets/illustrations/guide/milo-espera.webp" fallback="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, listo para el siguiente turno" />
+              )}
+            </div>
+            <div className="text-card">
+              {category ? <p className="category-label">{category.label}. {category.hint}</p> : null}
+              <p>{game.activeCard ? game.activeCard.text : "Lanza el dado y descubre qué actividad haremos."}</p>
+              <button type="button" className="btn btn-primary" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
+            </div>
+            <Die category={game.dieCategory} rolling={game.rolling} onRoll={game.roll} />
+          </div>
         </div>
-        <div className="text-card">
-          {category ? <p className="category-label" style={{ color: category.color }}>{category.label}. {category.hint}</p> : null}
-          <p>{game.activeCard ? game.activeCard.text : "Lanza el dado y descubre qué actividad haremos."}</p>
-          <button type="button" className="btn btn-primary" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
-        </div>
-      </div>
-        <Die category={game.dieCategory} rolling={game.rolling} onRoll={game.roll} />
       </div>
       <p className="live" aria-live="polite">{game.notice}</p>
       {game.storageNote ? <p className="storage-note" role="status">{game.storageNote}</p> : null}

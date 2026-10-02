@@ -1,5 +1,5 @@
 import { categoryMeta } from "../../data/cards";
-import { landmarks, pathD, startPosition, stepPosition } from "../../lib/game/path";
+import { landmarks, startPosition, stepPosition } from "../../lib/game/path";
 import type { StepMark } from "../../types/game";
 
 export function Path({ total, steps }: { total: number; steps: StepMark[] }) {
@@ -8,10 +8,6 @@ export function Path({ total, steps }: { total: number; steps: StepMark[] }) {
   const goal = stepPosition(total);
   return (
     <div className="path" aria-hidden="true">
-      <svg className="path-band" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d={pathD} fill="none" stroke="#8a6a4a" strokeWidth="4.2" strokeLinecap="round" />
-        <path d={pathD} fill="none" stroke="#c9bba6" strokeWidth="2.4" strokeLinecap="round" />
-      </svg>
       {Array.from({ length: 40 }, (_, index) => {
         const step = index + 1;
         const point = stepPosition(step);
