@@ -48,7 +48,7 @@ export function BoardView() {
               {game.activeCard ? (
                 <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
               ) : (
-                <Illustration src="/assets/illustrations/guide/milo-espera.webp" fallback="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, listo para el siguiente turno" />
+                <Illustration src="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, con un gesto de bienvenida" />
               )}
             </div>
             <div className="text-card">

@@ -72,7 +72,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outl
 .step.is-current { outline: 2px solid var(--gold); }
 .landmark { position: absolute; transform: translate(-50%, -170%); color: var(--ink); background: rgba(247, 241, 230, 0.88); border-radius: 999px; padding: 0 6px; font-size: clamp(9px, 1vw, 12px); font-weight: 700; white-space: nowrap; }
 .goal-mark { position: absolute; transform: translate(-50%, 70%); background: var(--cream); color: var(--ink); font-size: 11px; font-weight: 800; border-radius: 999px; padding: 1px 6px; }
-.milo-token { position: absolute; width: 5.5%; height: auto; object-fit: contain; transform: translate(-50%, -88%); background: transparent; }
+.milo-token { position: absolute; width: 6.2%; height: auto; object-fit: contain; transform: translate(-50%, -87.15%); background: transparent; pointer-events: none; }
+.milo-espera { width: min(220px, 28vw); height: auto; aspect-ratio: 784 / 1168; object-fit: cover; object-position: center 18%; border-radius: 50%; border: 6px solid var(--cream); }
+.milo-celebra { width: min(220px, 24vw); height: auto; object-fit: contain; background: transparent; }
 .die {
   position: relative; width: clamp(56px, 18%, 96px); height: clamp(56px, 18%, 96px); border-radius: 16px; z-index: 4;
   border: 3px solid var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;

@@ -10,6 +10,7 @@ export function GoalView() {
     <section className="screen goal-screen">
       <img className="screen-bg" src="/assets/illustrations/closing/meta.webp" alt="Claro del bosque con Milo celebrando el sendero recorrido" onError={(event) => { event.currentTarget.src = "/assets/illustrations/closing/meta.png"; }} />
       <div className="goal-copy">
+        <img className="milo-celebra" src="/assets/illustrations/guide/milo-celebra.png" alt="Milo celebra con los brazos levantados" />
         <h1>¡Lo logramos!</h1>
         <p>Miramos, comprendimos y ahora cuidamos. Juntos construimos un sendero de amistad. 💛</p>
         <div className="button-row">

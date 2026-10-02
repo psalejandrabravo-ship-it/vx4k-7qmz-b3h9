@@ -12,6 +12,7 @@ export function StartView() {
         <FullscreenButton />
       </header>
       <div className="start-copy">
+        <img className="milo-espera" src="/assets/illustrations/guide/milo-espera.png" alt="Milo de pie en el bosque, con un gesto tranquilo de bienvenida" />
         <h1>Sendero de la Amistad</h1>
         <p>Nos detenemos, miramos a quien lo necesita, y actuamos con cuidado.</p>
         <div className="button-row">

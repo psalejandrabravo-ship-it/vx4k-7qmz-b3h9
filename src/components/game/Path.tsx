@@ -30,8 +30,7 @@ export function Path({ total, steps }: { total: number; steps: StepMark[] }) {
       <span className="goal-mark" style={{ left: `${goal.x}%`, top: `${goal.y}%` }}>Meta</span>
       <img
         className="milo-token"
-        src="/assets/illustrations/guide/milo-camina.webp"
-        onError={(event) => { event.currentTarget.src = "/assets/illustrations/guide/milo-camina.png"; }}
+        src="/assets/illustrations/guide/milo-camina.png"
         alt=""
         style={{ left: `${milo.x}%`, top: `${milo.y}%` }}
       />
