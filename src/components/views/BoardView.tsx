@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { BrandLogo } from "../BrandLogo";
 import { FullscreenButton } from "../FullscreenButton";
 import { Illustration } from "../Illustration";
-import { Die } from "../game/Die";
 import { Path } from "../game/Path";
 import { ConfirmDialog } from "../modals/ConfirmDialog";
 import { InstructionsView } from "./InstructionsView";
@@ -32,6 +31,14 @@ export function BoardView() {
     return () => window.removeEventListener("keydown", onKey);
   }, [game]);
 
+  const [pulse, setPulse] = useState(0);
+  useEffect(() => {
+    if (!game.rolling) return;
+    const timer = window.setInterval(() => setPulse((value) => value + 1), 160);
+    return () => window.clearInterval(timer);
+  }, [game.rolling]);
+  const cycle = ["#E07A5F", "#E6B84C", "#2B2155"];
+  const tint = game.rolling ? cycle[pulse % cycle.length] : undefined;
   const category = game.activeCard ? categoryMeta[game.activeCard.category] : null;
 
   return (
@@ -52,21 +59,25 @@ export function BoardView() {
           )}
           <Path total={game.participantCount} steps={game.steps} />
           <div className="center-stage">
-            <div className="circle-frame">
+            <button
+              type="button"
+              className={`circle-frame ${game.rolling ? "is-cycling" : ""}`}
+              style={{ boxShadow: tint ? `0 0 0 6px ${tint}` : undefined }}
+              onClick={game.roll}
+              disabled={Boolean(game.activeCard) || game.rolling}
+              aria-label={game.activeCard ? "Situación en curso" : "Toca a Milo para descubrir la situación"}
+            >
               {game.activeCard ? (
                 <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
               ) : (
                 <Illustration src="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, con un gesto de bienvenida" />
               )}
-            </div>
+            </button>
             <div className="text-card">
-              {category ? <p className="category-label">{category.label}. {category.hint}</p> : null}
-              <p>{game.activeCard ? game.activeCard.text : "Lanza el dado y descubre qué actividad haremos."}</p>
+              {category ? <p className="category-label" style={{ background: category.color, color: category.color === "#2B2155" ? "#F7F1E6" : "#1E1830" }}>{category.label}. {category.hint}</p> : null}
+              <p>{game.activeCard ? game.activeCard.text : "Toca a Milo y descubre qué actividad haremos."}</p>
             </div>
-            <div className="control-row">
-              <button type="button" className="btn btn-primary logrado" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
-              <Die category={game.dieCategory} rolling={game.rolling} onRoll={game.roll} />
-            </div>
+            <button type="button" className="btn btn-primary logrado" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
           </div>
         </div>
       </div>
