@@ -74,7 +74,26 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outl
 .goal-mark { position: absolute; transform: translate(8%, -50%); background: var(--cream); color: var(--ink); font-size: 11px; font-weight: 800; border-radius: 999px; padding: 1px 6px; }
 .milo-token { position: absolute; width: 6.2%; height: auto; object-fit: contain; transform: translate(-50%, -87.15%); background: transparent; pointer-events: none; }
 .milo-espera { width: min(180px, 24vw); height: auto; aspect-ratio: 784 / 1168; object-fit: cover; object-position: center 18%; border-radius: 50%; border: 6px solid var(--cream); }
-.cover-art { display: none; }
+.cover-screen { background: #efe6d4; }
+.cover-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 22% center; }
+.cover-bar { position: relative; z-index: 2; }
+.cover-copy {
+  position: relative; z-index: 2; margin-left: auto; margin-right: 6%; margin-top: auto; margin-bottom: 7%;
+  width: min(440px, 42%); text-align: center; color: var(--indigo);
+}
+.cover-copy h1 { margin: 0; display: flex; flex-direction: column; align-items: center; line-height: 0.92; font-weight: 800; }
+.cover-copy h1 span { font-size: clamp(42px, 6vw, 84px); color: var(--indigo); }
+.cover-copy h1 small { font-size: clamp(18px, 2vw, 28px); font-weight: 700; margin: 6px 0; }
+.cover-line { width: 72px; height: 4px; border-radius: 999px; background: var(--coral); display: block; margin: 12px auto; }
+.cover-copy p { margin: 0 0 16px; font-size: clamp(18px, 2vw, 26px); font-weight: 700; }
+.cover-play { background: var(--coral); color: var(--indigo); border-radius: 999px; min-height: 52px; padding: 12px 28px; box-shadow: 0 5px 0 #c56a52; }
+.cover-play:hover { filter: brightness(1.04); }
+.cover-play:active { transform: translateY(2px); box-shadow: 0 2px 0 #c56a52; }
+.cover-back { color: var(--indigo); background: rgba(247, 241, 230, 0.72); }
+@media (max-width: 800px) and (orientation: portrait) {
+  .cover-bg { object-position: 18% 30%; }
+  .cover-copy { width: min(92%, 420px); margin: auto auto 8% auto; padding: 16px 8px 8px; background: linear-gradient(to top, rgba(247,241,230,0.88), rgba(247,241,230,0.2)); border-radius: 24px; }
+}
 .milo-celebra { width: min(220px, 24vw); height: auto; object-fit: contain; background: transparent; }
 .die-dock { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .die {
