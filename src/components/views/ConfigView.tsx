@@ -19,7 +19,7 @@ export function ConfigView() {
         }}
       >
         <h2>Preparación</h2>
-        <p>Indica cuántos niños y niñas participarán hoy.</p>
+        <p>Elige cuántas situaciones quieres recorrer hoy.</p>
         <div className="stepper">
           <button type="button" className="btn btn-outline" onClick={() => adjustDraft(-1)} aria-label="Menos participantes">−</button>
           <input
@@ -30,7 +30,7 @@ export function ConfigView() {
           />
           <button type="button" className="btn btn-outline" onClick={() => adjustDraft(1)} aria-label="Más participantes">+</button>
         </div>
-        {!valid ? <p className="inline-note" role="status">Ingresa un número entre 1 y 40.</p> : <p className="inline-note">Entre 1 y 40. El último paso queda en la llegada.</p>}
+        {!valid ? <p className="inline-note" role="status">Ingresa un número entre 1 y 40.</p> : <p className="inline-note">Este número es la cantidad de turnos: saldrá una tarjeta por cada uno y Milo avanzará hasta la llegada. Si juega un solo niño o una sola niña, elige aquí cuántas situaciones aparecerán.</p>}
         <div className="button-row">
           <button type="button" className="btn btn-outline" onClick={() => setView("instructions")}>Instrucciones</button>
           <button type="submit" className="btn btn-primary" disabled={!valid}>Todo listo</button>

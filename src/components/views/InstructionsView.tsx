@@ -7,7 +7,7 @@ export function InstructionsView({ onClose }: { onClose?: () => void }) {
       <div className="panel">
         <h2>Cómo jugar</h2>
         <ol className="help-list">
-          <li>Lanza el dado y descubre qué actividad haremos.</li>
+          <li>Toca a Milo en el claro y descubre qué actividad haremos.</li>
           <li>🧡 Acción: hacemos algo real. 🟠 Actuar: representamos una escena. 🔵 Responder: pensamos juntos.</li>
           <li>Cada vez que lo logramos, Milo avanza por el sendero.</li>
         </ol>

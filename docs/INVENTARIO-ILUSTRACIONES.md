@@ -71,3 +71,26 @@ Todas: 1:1, mínimo 1024×1024. Sin transparencia. Rostros, manos y acción dent
 | cards/responder-13.webp | Responder | Joaquín vio que un compañero estaba siendo molestado. ¿Qué debería hacer? |
 
 Las tarjetas accion-01 a accion-10 usan JPG definitivo y esa ruta tiene prioridad. Las otras 30 tarjetas siguen con SVG provisional y no reutilizan estas ilustraciones. La portada aprobada está en public/assets/illustrations/cover/inicio.jpg.
+
+
+## JPG integrados el 2026-10-03
+
+| Tarjeta | Consigna | Archivo | Ruta | Estado |
+| --- | --- | --- | --- | --- |
+| accion-11 | Dile a un compañero algo bueno que notaste que hizo hoy. | accion-11.jpg | public/assets/illustrations/cards/accion-11.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| accion-12 | Ofrece ayudar a un compañero a cargar sus cosas. | accion-12.jpg | public/assets/illustrations/cards/accion-12.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| accion-13 | Pregúntale a alguien "¿cómo estás hoy?" y escucha su respuesta. | accion-13.jpg | public/assets/illustrations/cards/accion-13.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-01 | Simula que ayudas a un amigo que se cayó y no puede levantarse. | actuar-01.jpg | public/assets/illustrations/cards/actuar-01.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-02 | Haz como si consolaras a un amigo que perdió su juguete favorito. | actuar-02.jpg | public/assets/illustrations/cards/actuar-02.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-03 | Representa cómo ayudarías a alguien que está asustado. | actuar-03.jpg | public/assets/illustrations/cards/actuar-03.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-04 | Simula compartir tu colación con alguien que no trajo nada. | actuar-04.jpg | public/assets/illustrations/cards/actuar-04.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-05 | Actúa como si ayudaras a alguien que no alcanza algo. | actuar-05.jpg | public/assets/illustrations/cards/actuar-05.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-06 | Haz de cuenta que calmas a un amigo que está llorando. | actuar-06.jpg | public/assets/illustrations/cards/actuar-06.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-07 | Representa cómo invitarías a jugar a alguien que está solo. | actuar-07.jpg | public/assets/illustrations/cards/actuar-07.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-08 | Simula prestar un lápiz a alguien que lo necesita. | actuar-08.jpg | public/assets/illustrations/cards/actuar-08.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-09 | Representa cómo ayudarías a un amigo que no entiende la tarea. | actuar-09.jpg | public/assets/illustrations/cards/actuar-09.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-10 | Haz como si ayudaras a levantar algo que se le cayó a un amigo. | actuar-10.jpg | public/assets/illustrations/cards/actuar-10.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-11 | Representa cómo animarías a alguien que perdió un juego. | actuar-11.jpg | public/assets/illustrations/cards/actuar-11.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-12 | Simula ayudar a un compañero nuevo a sentirse bienvenido. | actuar-12.jpg | public/assets/illustrations/cards/actuar-12.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-13 | Actúa cómo reaccionarías si ves a alguien siendo molestado. | actuar-13.jpg | public/assets/illustrations/cards/actuar-13.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |
+| actuar-14 | Simula ayudar a limpiar algo que un amigo derramó por accidente. | actuar-14.jpg | public/assets/illustrations/cards/actuar-14.jpg | Integrado. Copia idéntica al adjunto. Recorte circular no revisado en la app. |

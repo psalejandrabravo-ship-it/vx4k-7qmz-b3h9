@@ -47,7 +47,7 @@ export function FullscreenButton({ className = "" }: { className?: string }) {
   const label = active || expanded ? "Salir de pantalla completa" : "Pantalla completa";
   return (
     <div className={className}>
-      <button type="button" className="btn btn-ghost light" onClick={() => void toggle()}>{label}</button>
+      <button type="button" className="btn fullscreen-quiet" onClick={() => void toggle()}>{label}</button>
       {note ? <p className="inline-note" role="status">{note}</p> : null}
     </div>
   );
