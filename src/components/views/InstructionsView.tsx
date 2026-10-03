@@ -1,7 +1,7 @@
 import { useGame } from "../../store/GameProvider";
 
 export function InstructionsView({ onClose }: { onClose?: () => void }) {
-  const { setView, view, beginPath } = useGame();
+  const { setView } = useGame();
   return (
     <section className={onClose ? "modal-card" : "screen config-screen"}>
       <div className="panel">
@@ -12,20 +12,7 @@ export function InstructionsView({ onClose }: { onClose?: () => void }) {
           <li>Cada vez que lo logramos, Milo avanza por el sendero.</li>
         </ol>
         <div className="button-row">
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => {
-            if (onClose) onClose();
-            else if (view === "instructions") beginPath();
-            else setView("config");
-          }}
-          >
-            Entendido, ¡vamos!
-          </button>
-          {!onClose ? (
-            <button type="button" className="btn btn-outline" onClick={beginPath}>Omitir</button>
-          ) : null}
+          <button type="button" className="btn btn-primary" onClick={() => { if (onClose) onClose(); else setView("config"); }}>Volver a la preparación</button>
         </div>
       </div>
     </section>

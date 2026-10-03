@@ -38,7 +38,10 @@ export function BoardView() {
     <section className="screen board-screen">
       <header className="topbar">
         <div className="logo-plate"><BrandLogo /></div>
-        <button type="button" className="btn btn-ghost light" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
+        <div className="top-actions">
+          <FullscreenButton />
+          <button type="button" className="btn btn-ghost light" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
+        </div>
       </header>
       <div className="board-body">
         <div className="board-frame">
@@ -59,9 +62,11 @@ export function BoardView() {
             <div className="text-card">
               {category ? <p className="category-label">{category.label}. {category.hint}</p> : null}
               <p>{game.activeCard ? game.activeCard.text : "Lanza el dado y descubre qué actividad haremos."}</p>
-              <button type="button" className="btn btn-primary" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
             </div>
-            <Die category={game.dieCategory} rolling={game.rolling} onRoll={game.roll} />
+            <div className="control-row">
+              <button type="button" className="btn btn-primary logrado" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
+              <Die category={game.dieCategory} rolling={game.rolling} onRoll={game.roll} />
+            </div>
           </div>
         </div>
       </div>
@@ -80,7 +85,7 @@ export function BoardView() {
               <FullscreenButton />
               <button type="button" className="btn btn-outline" onClick={() => { setMenu(false); setConfirmReset(true); }}>Reiniciar partida</button>
               <button type="button" className="btn btn-outline" onClick={() => { setMenu(false); setConfirmPrefs(true); }}>Restablecer preferencias</button>
-              <button type="button" className="btn btn-outline" onClick={() => game.setView("start")}>Volver al inicio</button>
+              <button type="button" className="btn btn-outline" onClick={() => game.setView("config")}>Volver a la preparación</button>
               <button type="button" className="btn btn-primary" onClick={() => setMenu(false)}>Cerrar</button>
             </div>
           </div>
