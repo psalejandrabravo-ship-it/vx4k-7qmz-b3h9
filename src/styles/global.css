@@ -117,7 +117,6 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outl
 .die.is-rolling { animation: spin 0.7s ease; }
 .top-actions { display: flex; align-items: center; gap: 8px; }
 html.expanded-play .topbar { height: 44px; }
-html.expanded-play .board-frame { width: min(100%, calc(100dvh * 1168 / 784)); }
 @keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .die.is-rolling { animation: none; } }
 .live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -128,8 +127,6 @@ html.expanded-play .board-frame { width: min(100%, calc(100dvh * 1168 / 784)); }
 .storage-note { position: absolute; left: 12px; bottom: 8px; z-index: 6; color: var(--cream); font-size: 14px; }
 
 @media (max-height: 430px) {
-  .text-card p { font-size: 13px; }
-  .landmark { display: none; }
-  .topbar { height: 48px; }
-  .board-frame { width: min(100%, calc((100dvh - 64px) * 1168 / 784)); }
+  .text-card p { font-size: 12px; }
+  .topbar { height: 44px; }
 }
