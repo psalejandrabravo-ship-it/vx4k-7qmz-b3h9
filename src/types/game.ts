@@ -5,6 +5,7 @@ export interface Card {
   category: Category;
   text: string;
   image: string;
+  fallback?: string;
   alt: string;
 }
 

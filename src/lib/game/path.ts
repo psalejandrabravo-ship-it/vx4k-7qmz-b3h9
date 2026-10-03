@@ -3,18 +3,21 @@ export interface Point {
   y: number;
 }
 
-/** Posiciones en porcentaje del tablero (0–100), herradura izquierda-arriba-derecha. */
+/** Centro del camino de bosque.jpg, en porcentaje de la imagen (1168×784). */
 const samples: Point[] = [
-  { x: 8, y: 88 },
-  { x: 8, y: 62 },
-  { x: 9, y: 38 },
-  { x: 14, y: 18 },
-  { x: 28, y: 10 },
-  { x: 46, y: 8 },
-  { x: 64, y: 8 },
-  { x: 80, y: 12 },
-  { x: 90, y: 24 },
-  { x: 92, y: 42 },
+  { x: 29, y: 91 },
+  { x: 22, y: 74 },
+  { x: 16.5, y: 55 },
+  { x: 17.5, y: 38 },
+  { x: 24, y: 24 },
+  { x: 38, y: 17.5 },
+  { x: 50, y: 15.5 },
+  { x: 62, y: 17.5 },
+  { x: 76, y: 24 },
+  { x: 82.5, y: 38 },
+  { x: 83.5, y: 55 },
+  { x: 78, y: 74 },
+  { x: 71, y: 91 },
 ];
 
 function lengthOf(points: Point[]): number {
@@ -47,14 +50,12 @@ export function stepPosition(index: number, total = 40): Point {
   return pointAlong(t * totalLength);
 }
 
-export const startPosition: Point = { x: 8, y: 96 };
-export const pathD = "M 8 96 C 8 70 7 40 16 18 C 28 6 48 5 70 6 C 86 8 94 16 93 36 C 92 50 91 58 90 64";
+export const startPosition: Point = { x: 29, y: 94 };
+export const BOARD_RATIO = "1168 / 784";
 
 export const landmarks: { step: number; label: string }[] = [
-  { step: 6, label: "Arco de raíces" },
-  { step: 12, label: "Estanque" },
-  { step: 18, label: "Círculo de hongos" },
+  { step: 8, label: "Arco de raíces" },
+  { step: 16, label: "Estanque" },
   { step: 24, label: "Claro de luz" },
-  { step: 30, label: "Piedra musgosa" },
-  { step: 36, label: "Arco natural" },
+  { step: 32, label: "Piedra musgosa" },
 ];
