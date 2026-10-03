@@ -32,7 +32,7 @@ const GameContext = createContext<GameValue | null>(null);
 
 export function GameProvider({ children }: { children: ReactNode }) {
   const loaded = loadSettings();
-  const [view, setView] = useState<View>("start");
+  const [view, setView] = useState<View>("config");
   const [participantCount, setParticipantCount] = useState(loaded.settings.participantCount);
   const [draftCount, setDraftCount] = useState(String(loaded.settings.participantCount));
   const [soundEnabled, setSoundEnabled] = useState(loaded.settings.soundEnabled);

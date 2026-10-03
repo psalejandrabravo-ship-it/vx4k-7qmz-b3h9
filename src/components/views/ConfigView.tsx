@@ -1,3 +1,4 @@
+import { FullscreenButton } from "../FullscreenButton";
 import { useGame } from "../../store/GameProvider";
 
 export function ConfigView() {
@@ -8,16 +9,17 @@ export function ConfigView() {
   return (
     <section className="screen config-screen">
       <header className="topbar">
-        <button type="button" className="btn btn-ghost" onClick={() => setView("start")}>Volver al inicio</button>
+        <FullscreenButton />
       </header>
       <form
         className="panel"
         onSubmit={(event) => {
           event.preventDefault();
-          if (valid) setView("instructions");
+          if (valid) setView("start");
         }}
       >
-        <h2>¿Cuántos niños y niñas participarán hoy?</h2>
+        <h2>Preparación</h2>
+        <p>Indica cuántos niños y niñas participarán hoy.</p>
         <div className="stepper">
           <button type="button" className="btn btn-outline" onClick={() => adjustDraft(-1)} aria-label="Menos participantes">−</button>
           <input
@@ -28,8 +30,11 @@ export function ConfigView() {
           />
           <button type="button" className="btn btn-outline" onClick={() => adjustDraft(1)} aria-label="Más participantes">+</button>
         </div>
-        {!valid ? <p className="inline-note" role="status">Ingresa un número entre 1 y 40.</p> : <p className="inline-note">Entre 1 y 40.</p>}
-        <button type="submit" className="btn btn-primary" disabled={!valid}>Comenzar el sendero</button>
+        {!valid ? <p className="inline-note" role="status">Ingresa un número entre 1 y 40.</p> : <p className="inline-note">Entre 1 y 40. El último paso queda en la llegada.</p>}
+        <div className="button-row">
+          <button type="button" className="btn btn-outline" onClick={() => setView("instructions")}>Instrucciones</button>
+          <button type="submit" className="btn btn-primary" disabled={!valid}>Todo listo</button>
+        </div>
       </form>
     </section>
   );

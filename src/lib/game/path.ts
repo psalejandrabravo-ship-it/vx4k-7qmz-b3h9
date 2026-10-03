@@ -50,7 +50,7 @@ export function stepPosition(index: number, total = 40): Point {
   return pointAlong(t * totalLength);
 }
 
-export const startPosition: Point = { x: 29, y: 94 };
+export const startPosition: Point = samples[0];
 export const BOARD_RATIO = "1168 / 784";
 
 export const landmarks: { step: number; label: string }[] = [
