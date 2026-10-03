@@ -29,16 +29,16 @@ Todas: 1:1, mínimo 1024×1024. Sin transparencia. Rostros, manos y acción dent
 
 | Archivo | Categoría | Texto |
 | --- | --- | --- |
-| cards/accion-01.webp | Acción | Abraza a un compañero/a que esté a tu lado. |
-| cards/accion-02.webp | Acción | Dile una palabra amable a la persona más cercana a ti. |
-| cards/accion-03.webp | Acción | Dale un aplauso especial a alguien que lo necesite hoy. |
-| cards/accion-04.webp | Acción | Ofrece ayudar a guardar los materiales de un compañero. |
-| cards/accion-05.webp | Acción | Dile a alguien "puedes contar conmigo". |
-| cards/accion-06.webp | Acción | Comparte algo real que tengas con un compañero. |
-| cards/accion-07.webp | Acción | Dale las gracias a alguien que te ayudó esta semana. |
-| cards/accion-08.webp | Acción | Haz una sonrisa grande y dásela a un compañero. |
-| cards/accion-09.webp | Acción | Dile a un compañero "¡tú puedes!". |
-| cards/accion-10.webp | Acción | Invita a jugar a alguien que esté cerca de ti. |
+| cards/accion-01.jpg | Acción | Abraza a un compañero/a que esté a tu lado. |
+| cards/accion-02.jpg | Acción | Dile una palabra amable a la persona más cercana a ti. |
+| cards/accion-03.jpg | Acción | Dale un aplauso especial a alguien que lo necesite hoy. |
+| cards/accion-04.jpg | Acción | Ofrece ayudar a guardar los materiales de un compañero. |
+| cards/accion-05.jpg | Acción | Dile a alguien "puedes contar conmigo". |
+| cards/accion-06.jpg | Acción | Comparte algo real que tengas con un compañero. |
+| cards/accion-07.jpg | Acción | Dale las gracias a alguien que te ayudó esta semana. |
+| cards/accion-08.jpg | Acción | Haz una sonrisa grande y dásela a un compañero. |
+| cards/accion-09.jpg | Acción | Dile a un compañero "¡tú puedes!". |
+| cards/accion-10.jpg | Acción | Invita a jugar a alguien que esté cerca de ti. |
 | cards/accion-11.webp | Acción | Dile a un compañero algo bueno que notaste que hizo hoy. |
 | cards/accion-12.webp | Acción | Ofrece ayudar a un compañero a cargar sus cosas. |
 | cards/accion-13.webp | Acción | Pregúntale a alguien "¿cómo estás hoy?" y escucha su respuesta. |
@@ -70,4 +70,4 @@ Todas: 1:1, mínimo 1024×1024. Sin transparencia. Rostros, manos y acción dent
 | cards/responder-12.webp | Responder | Isidora no entiende la tarea y está preocupada. ¿Qué le dirías? |
 | cards/responder-13.webp | Responder | Joaquín vio que un compañero estaba siendo molestado. ¿Qué debería hacer? |
 
-Si el archivo llega en PNG, se usa el mismo nombre con extensión `.png`. El código de la rama busca primero WebP y luego PNG.
+Las tarjetas accion-01 a accion-10 ya están en JPG y esa ruta tiene prioridad. El resto sigue previsto en WebP, con PNG como alternativa.
