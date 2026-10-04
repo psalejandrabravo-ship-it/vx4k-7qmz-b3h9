@@ -8,7 +8,7 @@ export function StartView() {
     <section className="screen cover-screen">
       <img className="cover-bg" src="/assets/illustrations/cover/inicio.jpg" alt="Milo espera al inicio del sendero, en un claro del bosque" />
       <header className="topbar cover-bar">
-        <div className="logo-plate"><BrandLogo /></div>
+        <BrandLogo />
         <FullscreenButton />
       </header>
       <div className="cover-copy">

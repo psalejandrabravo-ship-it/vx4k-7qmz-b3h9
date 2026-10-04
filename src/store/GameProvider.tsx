@@ -95,7 +95,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
         setRolling(false);
         setNotice(`${drawn.card.id.startsWith("accion") ? "Acción" : drawn.card.id.startsWith("actuar") ? "Actuar" : "Responder"}. ${drawn.card.text}`);
         if (soundEnabled) void sfx.card();
-      }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 200 : 700);
+      }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 200 : 1200);
     },
     confirm: () => {
       if (!activeCard || !dieCategory) return;

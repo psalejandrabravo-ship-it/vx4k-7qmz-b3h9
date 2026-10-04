@@ -38,16 +38,17 @@ export function BoardView() {
     return () => window.clearInterval(timer);
   }, [game.rolling]);
   const cycle = ["#E07A5F", "#E6B84C", "#2B2155"];
-  const tint = game.rolling ? cycle[pulse % cycle.length] : undefined;
+  const settledColor = game.rolling && pulse > 4 && game.dieCategory ? categoryMeta[game.dieCategory].color : undefined;
+  const fill = settledColor ?? (game.rolling ? cycle[pulse % cycle.length] : undefined);
   const category = game.activeCard ? categoryMeta[game.activeCard.category] : null;
 
   return (
     <section className="screen board-screen">
-      <header className="topbar">
-        <div className="logo-plate"><BrandLogo /></div>
+      <header className="topbar board-chrome">
+        <BrandLogo />
         <div className="top-actions">
           <FullscreenButton />
-          <button type="button" className="btn btn-ghost light" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
+          <button type="button" className="btn btn-ghost" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
         </div>
       </header>
       <div className="board-body">
@@ -62,19 +63,19 @@ export function BoardView() {
             <button
               type="button"
               className={`circle-frame ${game.rolling ? "is-cycling" : ""}`}
-              style={{ boxShadow: tint ? `0 0 0 6px ${tint}` : undefined }}
+              style={{ background: fill }}
               onClick={game.roll}
               disabled={Boolean(game.activeCard) || game.rolling}
               aria-label={game.activeCard ? "Situación en curso" : "Toca a Milo para descubrir la situación"}
             >
-              {game.activeCard ? (
+              {game.rolling ? null : game.activeCard ? (
                 <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
               ) : (
                 <Illustration src="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, con un gesto de bienvenida" />
               )}
             </button>
-            <div className="text-card">
-              {category ? <p className="category-label" style={{ background: category.color, color: category.color === "#2B2155" ? "#F7F1E6" : "#1E1830" }}>{category.label}. {category.hint}</p> : null}
+            <div className="text-card" style={category ? { background: category.color, color: category.color === "#2B2155" ? "#F7F1E6" : "#1E1830" } : undefined}>
+              {category ? <p className="category-label">{category.label}</p> : null}
               <p>{game.activeCard ? game.activeCard.text : "Toca a Milo y descubre qué actividad haremos."}</p>
             </div>
             <button type="button" className="btn btn-primary logrado" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
