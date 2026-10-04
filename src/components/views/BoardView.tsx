@@ -45,7 +45,7 @@ export function BoardView() {
   return (
     <section className="screen board-screen">
       <header className="topbar board-chrome">
-        <div className="logo-plate"><BrandLogo /></div>
+        <BrandLogo />
         <div className="top-actions">
           <FullscreenButton />
           <button type="button" className="btn btn-ghost" onClick={() => setMenu(true)} aria-label="Menú">Menú</button>
