@@ -38,7 +38,8 @@ export function BoardView() {
     return () => window.clearInterval(timer);
   }, [game.rolling]);
   const cycle = ["#E07A5F", "#E6B84C", "#2B2155"];
-  const tint = game.rolling ? cycle[pulse % cycle.length] : undefined;
+  const settledColor = game.rolling && pulse > 4 && game.dieCategory ? categoryMeta[game.dieCategory].color : undefined;
+  const fill = settledColor ?? (game.rolling ? cycle[pulse % cycle.length] : undefined);
   const category = game.activeCard ? categoryMeta[game.activeCard.category] : null;
 
   return (
@@ -62,12 +63,12 @@ export function BoardView() {
             <button
               type="button"
               className={`circle-frame ${game.rolling ? "is-cycling" : ""}`}
-              style={{ boxShadow: tint ? `0 0 0 6px ${tint}` : undefined }}
+              style={{ background: fill }}
               onClick={game.roll}
               disabled={Boolean(game.activeCard) || game.rolling}
               aria-label={game.activeCard ? "Situación en curso" : "Toca a Milo para descubrir la situación"}
             >
-              {game.activeCard ? (
+              {game.rolling ? null : game.activeCard ? (
                 <Illustration src={game.activeCard.image} fallback={game.activeCard.fallback} alt={game.activeCard.alt} />
               ) : (
                 <Illustration src="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, con un gesto de bienvenida" />
