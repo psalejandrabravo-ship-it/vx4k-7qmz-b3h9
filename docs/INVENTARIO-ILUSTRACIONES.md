@@ -70,6 +70,10 @@ Todas: 1:1, mínimo 1024×1024. Sin transparencia. Rostros, manos y acción dent
 | cards/responder-12.webp | Responder | Isidora no entiende la tarea y está preocupada. ¿Qué le dirías? |
 | cards/responder-13.webp | Responder | Joaquín vio que un compañero estaba siendo molestado. ¿Qué debería hacer? |
 
+## Integradas en revision-visual (2026-10-05)
+
+Responder 01 a 13 usan PNG original, 2000×1778, sin recorte. Ruta: `public/assets/illustrations/cards/responder-01.png` a `responder-13.png`. El SVG queda como respaldo. No son cuadradas: el círculo de la interfaz recorta los lados.
+
 Las tarjetas accion-01 a accion-10 usan JPG definitivo y esa ruta tiene prioridad. Las otras 30 tarjetas siguen con SVG provisional y no reutilizan estas ilustraciones. La portada aprobada está en public/assets/illustrations/cover/inicio.jpg.
 
 
