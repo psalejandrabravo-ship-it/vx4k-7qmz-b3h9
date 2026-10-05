@@ -3,21 +3,19 @@ export interface Point {
   y: number;
 }
 
-/** Centro del camino de bosque.jpg, en porcentaje de la imagen (1168×784). */
+/** Centro del camino de bosque.jpg, en porcentaje de la imagen (1792×1008). */
 const samples: Point[] = [
-  { x: 29, y: 91 },
-  { x: 22, y: 74 },
-  { x: 16.5, y: 55 },
-  { x: 17.5, y: 38 },
-  { x: 24, y: 24 },
-  { x: 38, y: 17.5 },
-  { x: 50, y: 15.5 },
-  { x: 62, y: 17.5 },
-  { x: 76, y: 24 },
-  { x: 82.5, y: 38 },
-  { x: 83.5, y: 55 },
-  { x: 78, y: 74 },
-  { x: 71, y: 91 },
+  { x: 41, y: 84 },
+  { x: 34, y: 70 },
+  { x: 29, y: 52 },
+  { x: 33, y: 36 },
+  { x: 42, y: 26 },
+  { x: 50, y: 22 },
+  { x: 58, y: 26 },
+  { x: 67, y: 36 },
+  { x: 71, y: 52 },
+  { x: 66, y: 70 },
+  { x: 59, y: 84 },
 ];
 
 function lengthOf(points: Point[]): number {
@@ -51,7 +49,7 @@ export function stepPosition(index: number, total = 40): Point {
 }
 
 export const startPosition: Point = samples[0];
-export const BOARD_RATIO = "1168 / 784";
+export const BOARD_RATIO = "1792 / 1008";
 
 export const landmarks: { step: number; label: string }[] = [
   { step: 8, label: "Arco de raíces" },

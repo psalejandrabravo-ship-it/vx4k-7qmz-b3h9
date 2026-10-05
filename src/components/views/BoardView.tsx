@@ -60,6 +60,10 @@ export function BoardView() {
           )}
           <Path total={game.participantCount} steps={game.steps} />
           <div className="center-stage">
+            <div className="text-card" style={category ? { background: category.color, color: category.color === "#2B2155" ? "#F7F1E6" : "#1E1830" } : undefined}>
+              {category ? <p className="category-label">{category.label}</p> : null}
+              <p>{game.activeCard ? game.activeCard.text : "Toca a Milo y descubre qué actividad haremos."}</p>
+            </div>
             <button
               type="button"
               className={`circle-frame ${game.rolling ? "is-cycling" : ""}`}
@@ -74,11 +78,7 @@ export function BoardView() {
                 <Illustration src="/assets/illustrations/guide/milo-espera.png" alt="Milo espera en el bosque, con un gesto de bienvenida" />
               )}
             </button>
-            <div className="text-card" style={category ? { background: category.color, color: category.color === "#2B2155" ? "#F7F1E6" : "#1E1830" } : undefined}>
-              {category ? <p className="category-label">{category.label}</p> : null}
-              <p>{game.activeCard ? game.activeCard.text : "Toca a Milo y descubre qué actividad haremos."}</p>
-            </div>
-            <button type="button" className="btn btn-primary logrado" disabled={!game.activeCard} onClick={game.confirm}>Logrado</button>
+            <button type="button" className="ok-button" disabled={!game.activeCard} onClick={game.confirm} aria-label="Logrado">OK</button>
           </div>
         </div>
       </div>
