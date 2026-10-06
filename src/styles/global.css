@@ -36,11 +36,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outl
 .btn-primary { background: var(--coral); color: var(--ink); }
 .btn-primary:disabled { opacity: 0.45; }
 .btn-outline { background: transparent; color: var(--indigo); border-color: var(--indigo); }
-.brand-box { margin-top: 18px; border: 1px solid #d9cbb8; border-radius: 18px; padding: 12px 16px 16px; }
-.brand-box legend { padding: 0 6px; font-weight: 800; color: var(--indigo); }
-.brand-box p { margin: 6px 0 10px; }
-.brand-box input { display: none; }
-.brand-preview { height: 48px; width: auto; max-width: 220px; object-fit: contain; }
+.file-input { display: none; }
 .btn-outline.light, .btn-ghost.light { color: var(--cream); border-color: var(--cream); }
 .btn-ghost { background: transparent; color: var(--indigo); }
 
