@@ -1,18 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 
 export function ClosingVideo({ onDone }: { onDone: () => void }) {
+  const stageRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [needsTap, setNeedsTap] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  useEffect(() => {
+  async function play() {
     const video = videoRef.current;
+    const stage = stageRef.current;
     if (!video) return;
-    video.play().catch(() => setNeedsTap(true));
+    try {
+      await video.play();
+      if (stage?.requestFullscreen && !document.fullscreenElement) {
+        await stage.requestFullscreen();
+      }
+      setNeedsTap(false);
+    } catch {
+      setNeedsTap(true);
+    }
+  }
+
+  useEffect(() => {
+    void play();
   }, []);
 
+  async function finish() {
+    if (document.fullscreenElement) await document.exitFullscreen();
+    onDone();
+  }
+
   return (
-    <section className="screen closing-video">
+    <section className="screen closing-video" ref={stageRef}>
       {failed ? (
         <p className="inline-note">No pudimos reproducir el video. Puedes continuar.</p>
       ) : (
@@ -21,13 +40,13 @@ export function ClosingVideo({ onDone }: { onDone: () => void }) {
           src="/assets/video/cierre.mp4"
           playsInline
           controls
-          onEnded={onDone}
+          onEnded={() => void finish()}
           onError={() => setFailed(true)}
         />
       )}
       <div className="closing-actions">
-        {needsTap ? <button type="button" className="btn btn-primary" onClick={() => void videoRef.current?.play().then(() => setNeedsTap(false))}>Reproducir</button> : null}
-        <button type="button" className="btn fullscreen-quiet" onClick={onDone}>Saltar</button>
+        {needsTap ? <button type="button" className="btn btn-primary" onClick={() => void play()}>Reproducir</button> : null}
+        <button type="button" className="btn fullscreen-quiet" onClick={() => void finish()}>Saltar</button>
       </div>
     </section>
   );
