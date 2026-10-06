@@ -107,7 +107,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       if (nextSteps.length >= participantCount) {
         if (soundEnabled) void sfx.goal();
         setNotice("Llegamos a la meta. ¡Lo logramos!");
-        setView("goal");
+        setView("closing");
       }
     },
     toggleSound: () => {

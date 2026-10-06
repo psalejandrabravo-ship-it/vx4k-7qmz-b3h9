@@ -123,6 +123,13 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outl
 html.expanded-play .topbar { height: 44px; }
 @keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .die.is-rolling { animation: none; } }
+.closing-video { background: #1e1830; display: grid; place-items: center; }
+.closing-video video { width: min(100%, 1200px); max-height: 82dvh; background: #000; }
+.closing-actions { position: absolute; right: 16px; bottom: 16px; display: flex; gap: 8px; }
+.activity-link { margin-top: 10px; color: #1e1830; background: transparent; border: 0; font-size: 14px; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.activity-sheet { position: fixed; inset: 0; z-index: 20; background: #f7f1e6; display: grid; place-items: center; padding: 24px 16px 56px; }
+.activity-sheet img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.activity-sheet .fullscreen-quiet { position: absolute; right: 12px; bottom: 12px; }
 .live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .overlay { position: absolute; inset: 0; background: rgba(30, 24, 48, 0.55); display: grid; place-items: center; z-index: 7; padding: 16px; }
 .video-card { width: min(960px, 100%); background: var(--cream); border-radius: 24px; padding: 16px; display: grid; gap: 12px; }

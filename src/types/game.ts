@@ -14,7 +14,7 @@ export interface StepMark {
   category: Category;
 }
 
-export type View = "start" | "config" | "instructions" | "board" | "goal";
+export type View = "start" | "config" | "instructions" | "board" | "closing" | "goal";
 
 export interface Settings {
   schemaVersion: 1;

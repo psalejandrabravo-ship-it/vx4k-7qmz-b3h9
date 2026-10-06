@@ -1,13 +1,25 @@
-import { useState } from "react";
-import { DRIVE_FILE_ID } from "../../data/config";
-import { VideoModal } from "../modals/VideoModal";
+import { useEffect, useRef, useState } from "react";
 import { useGame } from "../../store/GameProvider";
 
 export function GoalView() {
   const { playAgain, setView } = useGame();
-  const [video, setVideo] = useState(false);
   const [closingFailed, setClosingFailed] = useState(false);
   const [miloFailed, setMiloFailed] = useState(false);
+  const [activity, setActivity] = useState(false);
+  const sheetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!activity) return;
+    const node = sheetRef.current;
+    if (!node?.requestFullscreen) return;
+    node.requestFullscreen().catch(() => undefined);
+  }, [activity]);
+
+  async function closeActivity() {
+    if (document.fullscreenElement) await document.exitFullscreen();
+    setActivity(false);
+  }
+
   return (
     <section className="screen goal-screen">
       {closingFailed ? null : (
@@ -22,14 +34,17 @@ export function GoalView() {
         <h1>¡Lo logramos!</h1>
         <p>Miramos, comprendimos y ahora cuidamos. Juntos construimos un sendero de amistad. 💛</p>
         <div className="button-row">
-          {DRIVE_FILE_ID ? (
-            <button type="button" className="btn btn-primary" onClick={() => setVideo(true)}>Ver video de cierre</button>
-          ) : null}
           <button type="button" className="btn btn-outline light" onClick={playAgain}>Jugar de nuevo</button>
           <button type="button" className="btn btn-ghost light" onClick={() => setView("start")}>Volver al inicio</button>
         </div>
+        <button type="button" className="activity-link" onClick={() => setActivity(true)}>Ver actividad</button>
       </div>
-      {video ? <VideoModal onClose={() => setVideo(false)} /> : null}
+      {activity ? (
+        <div className="activity-sheet" ref={sheetRef} role="dialog" aria-modal="true" aria-label="Actividad para colorear">
+          <img src="/assets/activity/actividad.png" alt="Lámina para colorear: Empatía, acciones que cuidan" />
+          <button type="button" className="btn fullscreen-quiet" onClick={() => void closeActivity()}>Cerrar</button>
+        </div>
+      ) : null}
     </section>
   );
 }
