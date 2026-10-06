@@ -32,7 +32,7 @@ export function ConfigView() {
         </div>
         {!valid ? <p className="inline-note" role="status">Ingresa un número entre 1 y 40.</p> : <p className="inline-note">Este número es la cantidad de turnos: saldrá una tarjeta por cada uno y Milo avanzará hasta la llegada. Si juega un solo niño o una sola niña, elige aquí cuántas situaciones aparecerán.</p>}
         <div className="button-row">
-          <a className="btn btn-outline" href="/assets/activity/actividad.pdf" download>Descargar actividad</a>
+          <a className="btn btn-outline download-activity" href="/assets/activity/actividad.pdf" download>Descargar actividad</a>
           <button type="button" className="btn btn-outline" onClick={() => setView("instructions")}>Instrucciones</button>
           <button type="submit" className="btn btn-primary" disabled={!valid}>Todo listo</button>
         </div>
