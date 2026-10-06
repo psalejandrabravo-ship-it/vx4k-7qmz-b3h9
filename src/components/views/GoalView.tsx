@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGame } from "../../store/GameProvider";
-
-const activityHref = "/assets/activity/actividad.pdf";
 
 export function GoalView() {
   const { playAgain, setView } = useGame();
   const [closingFailed, setClosingFailed] = useState(false);
   const [miloFailed, setMiloFailed] = useState(false);
+  const [activity, setActivity] = useState(false);
+  const sheetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!activity) return;
+    const node = sheetRef.current;
+    if (!node?.requestFullscreen) return;
+    node.requestFullscreen().catch(() => undefined);
+  }, [activity]);
+
+  async function closeActivity() {
+    if (document.fullscreenElement) await document.exitFullscreen();
+    setActivity(false);
+  }
+
   return (
     <section className="screen goal-screen">
       {closingFailed ? null : (
@@ -24,8 +37,14 @@ export function GoalView() {
           <button type="button" className="btn btn-outline light" onClick={playAgain}>Jugar de nuevo</button>
           <button type="button" className="btn btn-ghost light" onClick={() => setView("start")}>Volver al inicio</button>
         </div>
-        <a className="activity-link" href={activityHref} target="_blank" rel="noreferrer">Ver actividad</a>
+        <button type="button" className="activity-link" onClick={() => setActivity(true)}>Ver actividad</button>
       </div>
+      {activity ? (
+        <div className="activity-sheet" ref={sheetRef} role="dialog" aria-modal="true" aria-label="Actividad para colorear">
+          <img src="/assets/activity/actividad.png" alt="Lámina para colorear: Empatía, acciones que cuidan" />
+          <button type="button" className="btn fullscreen-quiet" onClick={() => void closeActivity()}>Cerrar</button>
+        </div>
+      ) : null}
     </section>
   );
 }
