@@ -28,7 +28,7 @@ export function GoalView() {
       </div>
       {activity ? (
         <div className="activity-sheet" role="dialog" aria-modal="true" aria-label="Actividad para colorear">
-          <img src="/assets/activity/actividad-hoja.png" alt="Hoja completa: Empatía, acciones que cuidan" />
+          <img src="/assets/activity/actividad.png" alt="Lámina para colorear: Empatía, acciones que cuidan" />
           <button type="button" className="btn fullscreen-quiet" onClick={() => setActivity(false)}>Cerrar</button>
         </div>
       ) : null}
