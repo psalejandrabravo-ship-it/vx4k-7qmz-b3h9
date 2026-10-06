@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { DRIVE_FILE_ID } from "../../data/config";
-import { VideoModal } from "../modals/VideoModal";
 import { useGame } from "../../store/GameProvider";
+
+const activityHref = "/assets/activity/actividad.pdf";
 
 export function GoalView() {
   const { playAgain, setView } = useGame();
-  const [video, setVideo] = useState(false);
   const [closingFailed, setClosingFailed] = useState(false);
   const [miloFailed, setMiloFailed] = useState(false);
   return (
@@ -22,14 +21,11 @@ export function GoalView() {
         <h1>¡Lo logramos!</h1>
         <p>Miramos, comprendimos y ahora cuidamos. Juntos construimos un sendero de amistad. 💛</p>
         <div className="button-row">
-          {DRIVE_FILE_ID ? (
-            <button type="button" className="btn btn-primary" onClick={() => setVideo(true)}>Ver video de cierre</button>
-          ) : null}
           <button type="button" className="btn btn-outline light" onClick={playAgain}>Jugar de nuevo</button>
           <button type="button" className="btn btn-ghost light" onClick={() => setView("start")}>Volver al inicio</button>
         </div>
+        <a className="activity-link" href={activityHref} target="_blank" rel="noreferrer">Ver actividad</a>
       </div>
-      {video ? <VideoModal onClose={() => setVideo(false)} /> : null}
     </section>
   );
 }
