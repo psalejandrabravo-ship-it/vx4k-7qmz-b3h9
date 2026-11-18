@@ -29,7 +29,11 @@ export function GoalView() {
       {activity ? (
         <div className="activity-sheet" role="dialog" aria-modal="true" aria-label="Actividad para colorear">
           <img src="/assets/activity/actividad.png" alt="Lámina para colorear: Empatía, acciones que cuidan" />
-          <button type="button" className="btn fullscreen-quiet" onClick={() => setActivity(false)}>Cerrar</button>
+          <div className="button-row">
+            <a className="btn btn-outline" href="/assets/activity/actividad.pdf" download="Empatia-acciones-que-cuidan.pdf">PDF</a>
+            <a className="btn btn-outline" href="/assets/activity/actividad.docx" download="Empatia-acciones-que-cuidan.docx">Word</a>
+            <button type="button" className="btn fullscreen-quiet" onClick={() => setActivity(false)}>Cerrar</button>
+          </div>
         </div>
       ) : null}
     </section>
